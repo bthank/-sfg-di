@@ -15,14 +15,14 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
 		
+		System.out.println("\n\n-------------- @Primary Bean Based Dependency Injection -------------");
 		// ask the Spring Application Context for an instance of MyController class
-		MyController myController = (MyController) context.getBean("myController");
-		String greeting = myController.sayHello();
-		System.out.println(greeting);
+		MyController myController = (MyController) context.getBean("myController");;
+		System.out.println(myController.sayHello());
 		
 		System.out.println("\n\n-------------- Property Based Dependency Injection -------------");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) context.getBean("propertyInjectedController");
-		greeting = propertyInjectedController.getGreeting();
+		String greeting = propertyInjectedController.getGreeting();
 		System.out.println(greeting);
 		
 		System.out.println("\n\n-------------- Setter Based Dependency Injection -------------");
