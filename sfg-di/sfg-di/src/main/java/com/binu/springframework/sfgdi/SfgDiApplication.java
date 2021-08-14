@@ -4,7 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.binu.springframework.sfgdi.controller.ConstructorInjectedController;
 import com.binu.springframework.sfgdi.controller.MyController;
+import com.binu.springframework.sfgdi.controller.PropertyInjectedController;
+import com.binu.springframework.sfgdi.controller.SetterInjectedController;
 
 @SpringBootApplication
 public class SfgDiApplication {
@@ -16,6 +19,22 @@ public class SfgDiApplication {
 		MyController myController = (MyController) context.getBean("myController");
 		String greeting = myController.sayHello();
 		System.out.println(greeting);
+		
+		System.out.println("\n\n-------------- Property Based Dependency Injection -------------");
+		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) context.getBean("propertyInjectedController");
+		greeting = propertyInjectedController.getGreeting();
+		System.out.println(greeting);
+		
+		System.out.println("\n\n-------------- Setter Based Dependency Injection -------------");
+		SetterInjectedController setterInjectedController = (SetterInjectedController) context.getBean("setterInjectedController");
+		greeting = setterInjectedController.getGreeting();
+		System.out.println(greeting);
+
+		
+		System.out.println("\n\n-------------- Constructor Based Dependency Injection -------------");
+		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context.getBean("constructorInjectedController");
+		greeting = constructorInjectedController.getGreeting();
+		System.out.println(greeting);		
 	}
 
 }
