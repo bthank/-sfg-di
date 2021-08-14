@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.binu.springframework.sfgdi.controller.PropertyInjectedController;
-import com.binu.springframework.sfgdi.service.GreetingServiceImpl;
+import com.binu.springframework.sfgdi.service.ConstructorInjectedGreetingServiceImpl;
 
 @SpringBootTest
 public class PropertyInjectedControllerTest {
@@ -17,7 +17,7 @@ public class PropertyInjectedControllerTest {
 	void setUp() {
 		controller = new PropertyInjectedController();
 		// mimic what Spring would do to inject dependency
-		controller.greetingService = new GreetingServiceImpl();
+		controller.greetingService = new ConstructorInjectedGreetingServiceImpl();
 		
 	}
 	
