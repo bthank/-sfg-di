@@ -8,7 +8,7 @@ import com.binu.springframework.sfgdi.controller.PropertyInjectedController;
 import com.binu.springframework.sfgdi.service.GreetingServiceImpl;
 
 @SpringBootTest
-public class PropertyControllerTest {
+public class PropertyInjectedControllerTest {
 
 	PropertyInjectedController controller;
 	
